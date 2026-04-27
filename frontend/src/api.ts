@@ -2,8 +2,9 @@
 
 import type { Call, Metrics } from "./types";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
-const API_KEY = import.meta.env.VITE_API_KEY || "dev_secret_change_me";
+// Production values — backend deployed on Fly.io
+const BASE_URL = "https://happyrobot-inbound-carrier1.fly.dev";
+const API_KEY = "49747487c922046a150c8c03d945167f3dcd8c3eb4cf4a36129966cce7990973";
 
 async function request<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
